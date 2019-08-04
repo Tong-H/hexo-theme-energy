@@ -1,0 +1,11 @@
+extends _partial/layout.pug
+
+block cssFile
+    link(rel="stylesheet" href="/css/tag.css")
+
+block main
+    .maxwidth
+        include _partial/sidebar.pug
+        .tag.rightside
+            .title= page.tag
+            include _partial/posts.pug

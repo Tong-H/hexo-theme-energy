@@ -1,0 +1,88 @@
+#home {
+    background: linear-gradient( #ffd274 5%, #ffac00 5%, #ffac00 90%, #ffd274 90%);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.preAnimat {
+    position: relative;
+    transition:all 1s;
+    width: 100%;
+    height: 100%;
+}
+#textcanvas {
+    display:none;
+}
+#maincanvas, #textcanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    transition: all 1s;
+    margin-top: 30vh;
+    text-align: center;
+    width: 100vw;
+}
+.linkitem {
+    display: inline-block;
+    animation: userin 2s;
+}
+.linkitem p {
+    font-size: 30px;
+    text-align: center;
+    font-weight: 600;
+    color: #b40b0b;
+    margin: 1vh 0;
+}
+.linkitem a {
+    background: #fff;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    color: #ff7100;
+    margin: 8px;
+    transition: all 0.8s;
+}
+.linkitem a:hover {
+    transform: scale(1.4);
+}
+.linkitem a i {
+    font-size: 26px
+}
+.linkitem a img {
+    width: 26px;
+    height: 26px;
+    vertical-align: sub;
+}
+@keyframes userin {
+    0% {
+        transform: translate(calc(50vw - 165px), 0)
+    }
+    18% {
+        transform: translate(calc(-30vw - 165px), 0)
+    }
+    36% {
+        transform: translate(calc(40vw - 165px), 0)
+    }
+    100% {
+        transform: translate(0, 0)
+    }
+}
+@media (max-width:1200px) {
+    .preAnimat {
+        display: none
+    }
+    #menu {
+        display: inline-block
+    }
+}

@@ -1,0 +1,95 @@
+#sidebar {
+    background:  #ffe4ad;
+    padding: 20px;
+    transition: all 1s;
+    box-shadow: #ffac00 0 0 0 10px, #ffac008f 0 0 0 20px;
+}
+#sidebar .info {
+    margin: 20px 0;
+}
+#sidebar .info img {
+    border-radius: 50%;
+}
+#sidebar .info div {
+    display: inline-block;
+    width: calc(100% - 70px);
+    vertical-align: middle;
+    margin-left: 10px;
+}
+#sidebar .social a {
+    background: #ffcf6b;
+    padding: 6px;
+    border-radius: 4px;
+    color: #ffffff;
+    margin: 4px;
+    display: inline-block;
+    transition: all 0.4s;
+    height: 30px;
+    vertical-align: middle;
+}
+#sidebar .social a:hover {
+    background: #ffb51c;
+}
+#sidebar .social a i {
+    font-size: 26px;
+}
+#sidebar .social a img {
+    height: 26px;
+}
+#sidebar .category-list {
+    background: #ffffed;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 20px 0;
+}
+#sidebar .category-list-item {
+    list-style: circle;
+    margin-left: 20px;
+    color: #ffac00;
+    transition: all .4s;
+}
+#sidebar .category-list-item span {
+    float: right;
+    z-index: 1;
+}
+#sidebar .category-list-item span::after {
+    content: ')'
+}
+#sidebar .category-list-item span::before {
+    content: '(';
+}
+#sidebar .category-list-item a {
+    position: relative;
+}
+#sidebar .category-list-item:hover {
+    color: #000
+}
+#sidebar .category-list-item a::after {
+    content: '.....................................................................';
+    position: absolute;
+    top: -8px;
+    width: calc(166px - 100%);
+    overflow: hidden;
+    left: calc(100% + 6px);
+    font-size: 24px;
+}
+#sidebar .tags a  {
+    display: inline-block;
+    position: relative;
+    padding: 4px;
+}
+.tags a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    animation: .4s tag-hover;
+}
+@keyframes tag-hover {
+    0% {
+        width: 0;
+    }
+}

@@ -1,0 +1,49 @@
+# html lang
+language: en
+
+# main menu navigation
+menu:
+    # Home: /
+    Archives: /archives
+    About: /about
+    Commonweal: /404
+
+home_title: WELCOME
+
+keywords: 没事儿,tong-h,Tong-H,tong-h blog
+
+headerRight: It's more tiring to stop
+
+article_txt: 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com
+
+social:
+    Home:
+        title: Home
+        url: /archives
+        icon: iconHome
+        index: true
+        sidebar: true
+    RSS:
+        title: RSS 源订阅
+        url: /atom.xml
+        icon: iconsubscribe-1-copy
+        index: true
+        sidebar: true
+    E-Mail:
+        title: E-Mail
+        url: mailto:tongt0232@gmail.com
+        icon: iconweibiaoti554
+        index: true
+        sidebar: true
+    GitHub:
+        title: GitHub
+        url: https://github.com/tong-h
+        icon: iconGitHub
+        index: true
+        sidebar: true
+    简书:
+        title: 简书 
+        url: https://www.jianshu.com/u/20de04cc53de
+        img: /images/jianicon
+        index: true
+        sidebar: true

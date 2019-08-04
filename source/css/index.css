@@ -1,0 +1,63 @@
+#posts article {
+    margin: 30px 0;
+}
+#posts article > .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 20px 0;
+    margin: 10px 0;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    display: block;
+}
+
+#posts article > .title::after {
+    content:'';
+    width:0;
+    height:0;
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: .4s;
+    margin: 0 30px;
+}
+#posts article > .title::before {
+    content:'';
+    width:0;
+    height:0;
+    border-top: 1px solid;
+    border-right: 1px solid;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: .4s;
+}
+#posts article > .title:hover::after{
+    width:calc(100% + 14px);
+    height:calc(100% + 14px);
+}
+#posts article > .title:hover::before{
+    width:calc(100% + 14px);
+    height:calc(100% + 14px);
+}
+
+#posts article > .content {
+    margin: 10px;
+    text-indent: 24px;
+    height: 82px;
+    line-height: 26px;
+}
+#posts article > .content p,#posts article > .content div,#posts article > .content h1,#posts article > .content strong,
+#posts article > .content h2,#posts article > .content h3,#posts article > .content li,#posts article > .content ul{
+    display: inline;
+    font-size: 16px;
+    font-weight: 100;
+    color: #444;
+}
+#posts article > .content br {
+    display: none
+}

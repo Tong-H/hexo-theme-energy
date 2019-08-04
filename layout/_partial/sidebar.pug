@@ -1,0 +1,18 @@
+block prepend cssFile
+    link(rel="stylesheet" href="/css/partial/sidebar.css")
+
+#sidebar
+    .info
+        img(src='/images/user.png', alt='头像')
+        div
+            p= config.author
+    .social
+        -for(i in theme.social)
+            a(href=theme.social[i].url title=theme.social[i].title)
+                if theme.social[i].icon
+                    i.iconfont(class=theme.social[i].icon)
+                else
+                    img(src=theme.social[i].img + '-sidebar.png')
+    if list_categories()
+        != list_categories()
+    .tags!= tagcloud({min_font: 14, max_font: 30, amount: 0, color: true, start_color: '#ffac00', end_color: '#b46e00'})

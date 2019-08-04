@@ -1,0 +1,10 @@
+block prepend cssFile
+    link(rel="stylesheet" href="/css/partial/posts.css")
+
+.posts
+    - page.posts.each(function(item){
+        li
+            a(href=url_for(item.path))= item.title
+            time(datetime=date_xml(item.date))= date(item.date)
+    - })
+    #paginator!= paginator()

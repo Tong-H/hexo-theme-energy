@@ -1,0 +1,11 @@
+.tag li {
+    list-style: circle;
+    margin: 20px 0;
+}
+.tag a::before {
+    content: attr(data-content);
+}
+.tag li span {
+    font-size: 20px;
+    vertical-align: text-bottom;
+}

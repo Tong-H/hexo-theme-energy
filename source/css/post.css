@@ -1,0 +1,137 @@
+.post .info {
+    text-align: right;
+}
+.post .info i {
+    font-size: 16px;
+    padding: 0 6px 0 20px;
+}
+.postDetail h1, .postDetail h2, .postDetail h3, .postDetail h4, .postDetail h5 {
+    margin: 20px 0;
+    padding: 10px 0 4px 0;
+    border-bottom: 1px solid;
+}
+.postDetail img {
+    background: #fff;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+.postDetail li {
+    margin-left: 30px;
+    list-style: circle;
+}
+.postDetail hr {
+    border-style: dotted;
+}
+table {
+    margin: 20px 0;
+    width: 100%;
+    font-size: 14px;
+    table-layout: fixed;
+    word-wrap: break-all;
+    background-color: #ffffffcf;
+}
+table>tbody>tr {
+    transition: all 1s;
+}
+table>tbody>tr:nth-of-type(odd) {
+    background-color: #faf2dead;
+}
+table>tbody>tr:hover {
+    background-color: #ffe6a8;
+}
+caption,th,td {
+    padding: 8px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: normal;
+}
+th {
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+td {
+    border-bottom-width: 1px;
+}
+pre,.highlight {
+    overflow: auto;
+    margin: 20px 0;
+    padding: 0;
+    font-size: 13px;
+    color: #4d4d4c;
+    background: white;
+    line-height: 1.6;
+}
+pre,code {
+    font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
+}
+code {
+    padding: 2px 4px;
+    word-wrap: break-word;
+    color: #555;
+    background: #eee;
+    border-radius: 3px;
+    font-size: 13px;
+}
+pre {
+    padding: 10px;
+}
+pre code {
+    padding: 0;
+    color: #4d4d4c;
+    background: none;
+    text-shadow: none;
+}
+.highlight {
+    border-radius: 1px;
+}
+.highlight pre {
+    border: none;
+    margin: 0;
+    padding: 10px 0;
+}
+.highlight table {
+    margin: 0;
+    width: auto;
+    border: none;
+}
+.highlight td {
+    border: none;
+    padding: 0;
+}
+.highlight figcaption {
+    font-size: 1em;
+    color: #4d4d4c;
+    line-height: 1em;
+    margin-bottom: 1em;
+}
+.highlight figcaption:before,
+.highlight figcaption:after {
+    content: " ";
+    display: table;
+}
+.highlight figcaption:after {
+    clear: both;
+}
+.highlight figcaption a {
+    float: right;
+    color: #4d4d4c;
+}
+.highlight figcaption a:hover {
+    border-bottom-color: #4d4d4c;
+}
+.highlight .gutter pre {
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #ffc10b;
+    text-align: right;
+    background-color: #fffaea;
+}
+.highlight .code pre {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+}
+.highlight .line {
+    height: 20px;
+}

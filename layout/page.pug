@@ -1,0 +1,11 @@
+extends _partial/layout.pug
+
+block cssFile
+    link(rel="stylesheet" href="/css/post.css")
+
+block main
+    .maxwidth
+        include _partial/sidebar.pug
+        .post.rightside
+            .title= page.title
+            .postDetail!= page.content

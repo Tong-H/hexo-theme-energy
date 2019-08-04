@@ -1,0 +1,25 @@
+extends _partial/layout.pug
+
+block cssFile
+    link(rel="stylesheet" href="/css/post.css")
+
+block main
+    .maxwidth
+        include _partial/sidebar.pug
+        .post.rightside
+            .title= page.title
+            .info
+                i.iconfont.iconshijian1= date(page.date, "YYYY-MM-DD HH:mm")
+                i.iconfont.iconshijian1= date(page.updated, "YYYY-MM-DD HH:mm")
+                i.iconfont.iconshijian1= page.categories
+                span#busuanzi_container_site_pv   #[span#busuanzi_value_site_pv] 
+                //- - for (var i = 1; i <= page.tags; i++)
+                //-     i.iconfont.iconshijian1= page.tags[i]
+                //- - })
+                //- i.iconfont.iconkanbaozhi= data.view_num
+                i.iconfont.iconwenzi= page.content.length
+            .postDetail!= page.content
+            - console.log(page.next)
+            //- div
+            //-     a(href=url_for(page.prev.path))= page.prev.title
+            //-     a(href=url_for(page.next.path))= page.next.title

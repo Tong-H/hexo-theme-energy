@@ -1,0 +1,23 @@
+extends _partial/layout.pug
+
+block cssFile
+    link(rel="stylesheet" href="/css/partial/partical.css")
+
+block body
+    #home
+        .preAnimat 
+            canvas#textcanvas
+            canvas#maincanvas
+        #menu
+            .linkitem
+                p= theme.home_title
+                div
+                    -for(i in theme.social)
+                        a(href=theme.social[i].url title=theme.social[i].title  target='_blank')
+                            if theme.social[i].icon
+                                i.iconfont(class=theme.social[i].icon)
+                            else
+                                img(src=theme.social[i].img+'.png')
+block js
+    script(src="/js/partical.js")
+    script(src="/js/axios.min.js")

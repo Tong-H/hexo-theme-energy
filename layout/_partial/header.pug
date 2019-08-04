@@ -1,0 +1,12 @@
+block prepend cssFile
+    link(rel="stylesheet" href="/css/partial/header.css")
+
+.header
+    .maxwidth
+        .nav
+            each url, label in theme.menu
+                a#artlist(href=url_for(url))
+                    i.iconfont(class=`icon${label}`)
+                    span.headhid &nbsp;#{label}
+        .search= theme.headerRight
+.line
