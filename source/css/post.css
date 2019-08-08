@@ -1,13 +1,31 @@
 .post .info {
-    text-align: right;
+    text-align: center;
+    padding: 30px 0;
+    color: #707070;
 }
 .post .info i {
-    font-size: 16px;
-    padding: 0 6px 0 20px;
+    padding: 0 6px;
+}
+.post .info i::before {
+    padding-right: 6px;
+}
+.postDetail p {
+    margin: 20px 0;
+}
+.postDetail a {
+    border-bottom: 1px solid;
+    margin: 0 10px;
+    color: #0289ea;
+}
+.postDetail {
+    line-height: 40px;
+    font-weight: 400;
 }
 .postDetail h1, .postDetail h2, .postDetail h3, .postDetail h4, .postDetail h5 {
     margin: 20px 0;
-    padding: 10px 0 4px 0;
+    padding: 4px 0;
+}
+.postDetail h2 {
     border-bottom: 1px solid;
 }
 .postDetail img {
@@ -22,60 +40,61 @@
 .postDetail hr {
     border-style: dotted;
 }
-table {
+.postDetail img {
+    width: 100%;
+    height: auto;
+}
+.postDetail table {
     margin: 20px 0;
     width: 100%;
-    font-size: 14px;
     table-layout: fixed;
     word-wrap: break-all;
     background-color: #ffffffcf;
 }
-table>tbody>tr {
+.postDetail table>tbody>tr {
     transition: all 1s;
 }
-table>tbody>tr:nth-of-type(odd) {
+.postDetail table>tbody>tr:nth-of-type(odd) {
     background-color: #faf2dead;
 }
-table>tbody>tr:hover {
+.postDetail table>tbody>tr:hover {
     background-color: #ffe6a8;
 }
-caption,th,td {
+.postDetail caption,th,td {
     padding: 8px;
     text-align: left;
     vertical-align: middle;
     font-weight: normal;
 }
-th {
+.postDetail th {
     padding-bottom: 10px;
     font-weight: 700;
 }
-td {
+.postDetail td {
     border-bottom-width: 1px;
 }
-pre,.highlight {
+.postDetail pre,.highlight {
     overflow: auto;
     margin: 20px 0;
     padding: 0;
-    font-size: 13px;
-    color: #4d4d4c;
-    background: white;
+    color: #eee;
+    background: #383838;
     line-height: 1.6;
 }
-pre,code {
+.postDetail pre,code {
     font-family: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
 }
-code {
+.postDetail code {
     padding: 2px 4px;
     word-wrap: break-word;
-    color: #555;
-    background: #eee;
+    color: #eee;
+    background: #383838;
     border-radius: 3px;
-    font-size: 13px;
 }
-pre {
+.postDetail pre {
     padding: 10px;
 }
-pre code {
+.postDetail pre code {
     padding: 0;
     color: #4d4d4c;
     background: none;
@@ -122,16 +141,33 @@ pre code {
 .highlight .gutter pre {
     padding-left: 10px;
     padding-right: 10px;
-    color: #ffc10b;
+    color: #ffdd7a;
     text-align: right;
-    background-color: #fffaea;
+    background-color: #565656;
 }
 .highlight .code pre {
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: white;
 }
 .highlight .line {
     height: 20px;
+}
+.js .keyword {
+    color: #ffac00
+}
+.js .number {
+    color: #faff21
+}
+.js .string {
+    color: #70e193
+}
+.js .comment {
+    color: #9a9a9a
+}
+.built_in {
+    color: #e68181
+}
+.js .title {
+    color: #ffac00
 }

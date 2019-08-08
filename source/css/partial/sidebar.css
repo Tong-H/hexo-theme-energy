@@ -3,12 +3,35 @@
     padding: 20px;
     transition: all 1s;
     box-shadow: #ffac00 0 0 0 10px, #ffac008f 0 0 0 20px;
+    animation: sidebarC 4s;
+}
+@keyframes sidebarC {
+    45% {
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        height: calc(100vh - 166px);
+    }
 }
 #sidebar .info {
     margin: 20px 0;
 }
 #sidebar .info img {
     border-radius: 50%;
+}
+#sidebar .info img:hover {
+    border-radius: 50%;
+    animation: head .6s
+}
+@keyframes head {
+    0% {
+        transform: rotate(360deg)
+    }
+    100% {
+        transform: rotate(0)
+    }
 }
 #sidebar .info div {
     display: inline-block;
@@ -23,7 +46,6 @@
     color: #ffffff;
     margin: 4px;
     display: inline-block;
-    transition: all 0.4s;
     height: 30px;
     vertical-align: middle;
 }
@@ -38,6 +60,7 @@
 }
 #sidebar .category-list {
     background: #ffffed;
+    color: #808080;
     border-radius: 4px;
     padding: 8px;
     margin: 20px 0;
@@ -45,8 +68,8 @@
 #sidebar .category-list-item {
     list-style: circle;
     margin-left: 20px;
-    color: #ffac00;
     transition: all .4s;
+    position: relative;
 }
 #sidebar .category-list-item span {
     float: right;
@@ -58,38 +81,42 @@
 #sidebar .category-list-item span::before {
     content: '(';
 }
-#sidebar .category-list-item a {
-    position: relative;
-}
-#sidebar .category-list-item:hover {
-    color: #000
-}
-#sidebar .category-list-item a::after {
-    content: '.....................................................................';
-    position: absolute;
-    top: -8px;
-    width: calc(166px - 100%);
-    overflow: hidden;
-    left: calc(100% + 6px);
-    font-size: 24px;
-}
-#sidebar .tags a  {
-    display: inline-block;
-    position: relative;
-    padding: 4px;
-}
-.tags a:hover::after {
+#sidebar.tags a:hover::after, #sidebar .relat li:hover::after, #sidebar .category-list li:hover::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 2px;
-    background: #fff;
-    animation: .4s tag-hover;
+    background: #ffac00;
+    animation: .6s tag-hover;
+}
+#sidebar .tags a  {
+    display: inline-block;
+    position: relative;
+    padding: 4px;
 }
 @keyframes tag-hover {
     0% {
         width: 0;
     }
+}
+#sidebar .relat li {
+    transition: all .4s;
+    list-style: circle;
+    margin-left: 10px;
+    position: relative;
+}
+#sidebar .relat li:hover,  #sidebar .category-list-item:hover, .structure .toc a:hover {
+    color: #ffac00
+}
+.structure .toc {
+    margin-left: 10px;
+}
+.structure .toc .toc-item {
+    position: relative;
+}
+.structure .toc .toc-number {
+    color: #ffac00;
+    font-weight: 900;
 }

@@ -13,8 +13,8 @@ html, body {
 .ellipse::after {
     content: "...";
     position: absolute;
-    top: 54px;
-    font-size: 40px;
+    bottom: 0;
+    font-size: 42px;
     right: 0;
 }
 .scroll{
@@ -63,7 +63,7 @@ html, body {
     }
 }
 .main {
-    min-height: calc(100vh - 94px);
+    min-height: 100vh;
     width: 100vw;
     animation: bounce-in 2s;
     background: linear-gradient(-48deg,
@@ -73,7 +73,7 @@ html, body {
     transition: all 1s;
     overflow-x: hidden;
 }
-.title {
+.artititle {
     font-size: 24px;
     vertical-align: middle;
     margin: 30px 10px;
@@ -104,16 +104,36 @@ html, body {
         min-width: 1000px;
         margin: auto;
     }
+    .header {
+        position: fixed;
+        top: 0;
+        z-index: 1;
+    }
+    .header .maxwidth {
+        padding: 0 8vw;
+        width: 84vw;
+        min-width: calc(1000px - 16vw);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .header .search input {
+        width: 300px;
+    }
     #sidebar {
         margin-left: 30px;
-        min-height: calc(100vh - 150px);
+        height: calc(100vh - 166px);
+        position: fixed;
+        top: 78px;
+        z-index: 2;
+        overflow: auto;
     }
     .rightside {
         padding: 30px;
         display: inline-block;
         background: #ffffffa3;
         width: calc(100% - 410px);
-        margin: 0 10px;
+        margin: 76px 0 0 330px;
     } 
     #sidebar {
         width: 240px;
@@ -131,6 +151,9 @@ html, body {
     }
     body {
         min-width: 350px;
+    }
+    .header .search input {
+        width: calc(100% - 62px);
     }
     .maxwidth, .rightside {
         width: calc(100% - 32px);
