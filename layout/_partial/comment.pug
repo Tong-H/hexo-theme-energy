@@ -1,0 +1,40 @@
+block prepend cssFile
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css")
+
+#comment
+    #gitalk-container(data-gitalk=JSON.stringify(theme.Gitalk) data-date=page.date)
+    script(src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js")
+    script.
+        function commentinit() {
+            setTimeout(()=>{
+                if (this.Gitalk) {
+                    let string = JSON.parse(document.getElementById('gitalk-container').dataset.gitalk)
+                    var gitalk = new Gitalk({
+                        clientID: string.client_id,
+                        clientSecret: string.client_secret,
+                        repo: string.repo,
+                        owner: string.owner,
+                        admin: string.admin,
+                        id: document.getElementById('gitalk-container').dataset.date,
+                        distractionFreeMode: string.distractionFreeMode
+                    })
+                    gitalk.render('gitalk-container')
+                } else commentinit()
+            },100)
+        }
+        commentinit()
+    //- div 最新评论（5）
+    //- #comment_item
+    //- form(id="comments" )
+    //-     input(type="text" placeholder="你的大名(公开,必填)" maxlength="20" required name="name")
+    //-     input(placeholder="你的邮箱(不公开,必填)"  name="email" data-reg="^.+@.+\..+$" required maxlength="100")
+    //-     input(placeholder="你的网站链接(公开)" name="website" data-reg="^(http|https|ftp)\:\/\/.+$" maxlength="100")
+    //-     textarea(rows="8" name="content" placeholder="你有什么想说的.......(公开,必填)" required)
+    //- label(for="personal") 记住个人信息？&nbsp;
+    //- input#personal(type="checkbox" onclick="!this.checked?forgetMe():rememberMe()" value="1" accesskey="r")
+    //- button(onclick="commentsubmit()")
+    //-     i.iconfont.icongou
+    //-     span 发送
+//- block js
+//-     script(src="/js/comment.js")
+//-     script(src="/js/axios.min.js")

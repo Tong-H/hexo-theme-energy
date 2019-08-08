@@ -1,7 +1,7 @@
 extends _partial/layout.pug
 
 block cssFile
-    link(rel="stylesheet" href="/css/partial/partical.css")
+    link(rel="stylesheet" href="/css/partical.css")
 
 block body
     #home
@@ -13,11 +13,11 @@ block body
                 p= theme.home_title
                 div
                     -for(i in theme.social)
-                        a(href=theme.social[i].url title=theme.social[i].title  target='_blank')
+                        a(href=theme.social[i].url title=theme.social[i].title)
                             if theme.social[i].icon
                                 i.iconfont(class=theme.social[i].icon)
                             else
                                 img(src=theme.social[i].img+'.png')
+            include _partial/footer.pug
 block js
     script(src="/js/partical.js")
-    script(src="/js/axios.min.js")

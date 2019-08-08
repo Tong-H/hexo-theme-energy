@@ -1,0 +1,15 @@
+block prepend cssFile
+    link(rel="stylesheet" href="/css/partial/footer.css")
+
+.footer
+    p
+        span= `Copyright © 2017 - ${new Date().getFullYear()}  `
+        a(href="http://www.beian.miit.gov.cn/") 蜀ICP备19024124号
+    p Powered by #[a(href="https://hexo.io/zh-cn/" target="_blank") Hexo] Theme by #[a(href="https://github.com/Tong-H/hexo-theme-energy" target="_blank") ENERGY]
+    p
+        i.iconfont.iconchakan
+            span 本站总访问量
+            span#busuanzi_container_site_pv   #[span#busuanzi_value_site_pv] 
+        i.iconfont.iconabout
+            span 本站访客数
+            span#busuanzi_container_site_uv   #[span#busuanzi_value_site_uv] 

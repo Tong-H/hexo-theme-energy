@@ -4,9 +4,9 @@ block prepend cssFile
 .header
     .maxwidth
         .nav
+            -console.log(path)
             each url, label in theme.menu
-                a#artlist(href=url_for(url))
-                    i.iconfont(class=`icon${label}`)
+                a#artlist(href=url_for("/"+url) class=(path.split('/')[0] === url ? 'focuspage' : ''))
+                    i.iconfont(class=`icon${url}`)
                     span.headhid &nbsp;#{label}
-        .search= theme.headerRight
-.line
+        .search= theme.header_right

@@ -1,0 +1,13 @@
+style.
+    .copyright {
+        padding: 6px 20px;
+        color: #ff9537;
+        border-radius: 4px;
+        background: white;
+        font-weight: 600;
+        margin: 20px 0;
+    }
+.copyright
+    p 文章来源：#[a(href=url)=page.title]
+    p="更新时间："+ date(page.date, "YYYY-MM-DD")
+    != theme.article_txt

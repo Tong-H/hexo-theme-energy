@@ -2,24 +2,36 @@ extends _partial/layout.pug
 
 block cssFile
     link(rel="stylesheet" href="/css/post.css")
-
+    link(rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css")
 block main
     .maxwidth
         include _partial/sidebar.pug
         .post.rightside
-            .title= page.title
+            .artititle= page.title
             .info
-                i.iconfont.iconshijian1= date(page.date, "YYYY-MM-DD HH:mm")
-                i.iconfont.iconshijian1= date(page.updated, "YYYY-MM-DD HH:mm")
-                i.iconfont.iconshijian1= page.categories
-                span#busuanzi_container_site_pv   #[span#busuanzi_value_site_pv] 
-                //- - for (var i = 1; i <= page.tags; i++)
-                //-     i.iconfont.iconshijian1= page.tags[i]
-                //- - })
-                //- i.iconfont.iconkanbaozhi= data.view_num
-                i.iconfont.iconwenzi= page.content.length
+                i.iconfont.iconchakan(title="本文阅读量")
+                    span#busuanzi_container_page_pv   #[span#busuanzi_value_page_pv] 
+                if wordcount
+                    i.iconfont.iconwenzi(title="字数")= wordcount(page.content)
+                if min2read
+                    i.iconfont.iconweibiaoti--(title="阅读时长")= min2read(page.content)
+                if page.categories.length > 0
+                    i.iconfont.iconarchives(title="文章分类")
+                        each category in page.categories.toArray()
+                            span= category.name
+                if page.tags.length > 0
+                    i.iconfont.iconbiaoqian(title="文章标签")
+                        each tag in page.tags.toArray()
+                            span= tag.name
+                i.iconfont.iconshijian
+                    span(title="文章发布时间")= date(page.date, "YYYY-MM-DD") 
+                    span &emsp;
+                    span(title="文章更新时间")= date(page.updated, "YYYY-MM-DD")
             .postDetail!= page.content
-            - console.log(page.next)
-            //- div
-            //-     a(href=url_for(page.prev.path))= page.prev.title
-            //-     a(href=url_for(page.next.path))= page.next.title
+            if (page.copyright)
+                include _partial/copyright.pug
+            if (theme.Gitalk.client_id && theme.Gitalk.client_secret && theme.Gitalk.enable)
+                include _partial/comment.pug
+        include _partial/footer.pug
+//- block js
+//-     script(src="/js/hexo.js")
