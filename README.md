@@ -8,7 +8,7 @@ there is theme of hexo, preview https://tong-h.github.io/
 ```bash
 git clone https://github.com/Tong-H/hexo-theme-energy.git themes/energy
 ```
-amend your hexo _config.yml，like this
+modify your hexo _config.yml，like this
 ```xml
 theme: energy
 ```
@@ -18,3 +18,4 @@ theme: energy
 cd themes/energy
 git pull
 ```
+Please Star this Project if you like it! Follow would also be appreciated! Peace!
