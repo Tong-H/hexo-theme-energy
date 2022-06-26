@@ -2,11 +2,11 @@
 
 there is theme of hexo, preview [https://tong-h.github.io/](https://tong-h.github.io/)
 
-![photo](/source/images/example(4).png)
-![photo](/source/images/example(2).png)
-![photo](/source/images/example(3).png)
-![photo](/source/images/example(1).png)
-![photo](/source/images/example(5).png)
+![photo](/screenshots/images/example(4).png)
+![photo](/screenshots/images/example(2).png)
+![photo](/screenshots/images/example(3).png)
+![photo](/screenshots/images/example(1).png)
+![photo](/screenshots/images/example(5).png)
 
 ## install
 
