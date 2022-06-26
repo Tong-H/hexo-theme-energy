@@ -1,0 +1,21 @@
+{
+  "name": "hexo-theme-energy",
+  "version": "1.0.0",
+  "description": "A yellow special theme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tong-H/hexo-theme-energy.git"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "energy",
+    "hexo-theme-energy"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tong-H/hexo-theme-energy/issues"
+  },
+  "homepage": "https://tong-h.github.io/"
+}
