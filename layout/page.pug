@@ -9,4 +9,6 @@ block main
         .post.rightside
             .artititle= page.title
             .postDetail!= page.content
+            if (theme.Gitalk.enable && theme.Gitalk.client_id && theme.Gitalk.client_secret)
+                include _partial/comment.pug
         include _partial/footer.pug

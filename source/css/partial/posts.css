@@ -12,18 +12,18 @@
     transition: all .4s;
 }
 .posts li:hover {
-    color: white
+    color: #ff9537
 }
 .posts li:hover::after {
     content: '';
     position: absolute;
     width: 100%;
     top: 7px;
-    height: 36px;
+    height: 35px;
     transform: translate(0,0);
-    background: #ff9537;
+    background: #fff0e3;
     left: 0;
     z-index: -1;
     border-radius: 4px;
-    animation: page-hover .4s
+    animation: page-hover .6s
 }

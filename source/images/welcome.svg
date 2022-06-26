@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="210" height="44">
+			<defs>
+				<text id="welcome"> WELCOME  </text>
+			</defs>
+			<style >
+				text {
+					font-family: sans-serif;
+					font-weight: bold;
+					font-size: 40px;
+					stroke-width: 2;
+					fill: none;
+					stroke-linecap: square;
+				}
+			</style>
+			<use href="#welcome" x="2" y="38" stroke="#fff" stroke-dasharray="35, 105">
+				<animate attributeType="XML" attributeName="stroke-dashoffset" from="0" to="140" dur="4s" repeatCount="indefinite"></animate>
+			</use>
+			<use href="#welcome" x="2" y="38" stroke="#f11010" stroke-dasharray="0 35 35 70">
+				<animate attributeType="XML" attributeName="stroke-dashoffset" from="0" to="140" dur="4s" repeatCount="indefinite"></animate>
+			</use>
+			<use href="#welcome" x="2" y="38" stroke="#b40b0b" stroke-dasharray="0 70 35 35">
+				<animate attributeType="XML" attributeName="stroke-dashoffset" from="0" to="140" dur="4s" repeatCount="indefinite"></animate>
+			</use>
+			<use href="#welcome" x="2" y="38" stroke="#ff4c94" stroke-dasharray="0 105 35 0">
+				<animate attributeType="XML" attributeName="stroke-dashoffset" from="0" to="140" dur="4s" repeatCount="indefinite"></animate>
+			</use>
+		</svg>

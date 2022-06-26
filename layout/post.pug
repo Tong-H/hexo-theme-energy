@@ -9,12 +9,10 @@ block main
         .post.rightside
             .artititle= page.title
             .info
-                i.iconfont.iconchakan(title="本文阅读量")
-                    span#busuanzi_container_page_pv   #[span#busuanzi_value_page_pv] 
                 if wordcount
                     i.iconfont.iconwenzi(title="字数")= wordcount(page.content)
                 if min2read
-                    i.iconfont.iconweibiaoti--(title="阅读时长")= min2read(page.content)
+                    i.iconfont.iconshijian(title="阅读时长")= min2read(page.content)
                 if page.categories.length > 0
                     i.iconfont.iconarchives(title="文章分类")
                         each category in page.categories.toArray()
@@ -25,8 +23,6 @@ block main
                             span= tag.name
                 i.iconfont.iconshijian
                     span(title="文章发布时间")= date(page.date, "YYYY-MM-DD") 
-                    span &emsp;
-                    span(title="文章更新时间")= date(page.updated, "YYYY-MM-DD")
             .postDetail!= page.content
             if (page.copyright)
                 include _partial/copyright.pug

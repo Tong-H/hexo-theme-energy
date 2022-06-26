@@ -1,4 +1,5 @@
-const docsize = [document.documentElement.clientWidth, document.documentElement.clientHeight]
+const docsize = [document.documentElement.clientWidth, document.documentElement.clientHeight],
+dpr = window.devicePixelRatio
 
 const maincanvas = document.getElementById("maincanvas")
 const maincontent = maincanvas.getContext("2d")
@@ -10,13 +11,13 @@ const textcontext = textcanvas.getContext("2d")
 textcanvas.width = docsize[0]
 textcanvas.height = docsize[1]
 
-const color = ['#ffffff', '#b40b0b', '#ff4c94', '#f11010']
+const color = ['#ffffff', '#b40b0b', '#ff4c94', '#f11010'],
+    menu = document.getElementById("menu"),
+    pages = document.getElementById('pages')
 
 // 【粒子数组，动画时间， 聚拢速度，粒子活动速度，文字高度】
 let [pointarr, time, joinspeed, pointspeed, fontsize] = [[], 0, 80, 4, 400]
 
-const menu = document.getElementById("menu")
-const pages = document.getElementById('pages')
 
 class Point{
     constructor() {
@@ -64,30 +65,19 @@ for (var i = 0; i < 609; i ++) {
     pointarr.push(new Point)
 }
 
-(function random() {
-    // 指定时间重新生成文字
-    if(time === 0) backdrop('hello')
-    maincontent.clearRect(0, 0, docsize[0], docsize[1])
-    for (var i = 0; i < pointarr.length; i++) pointarr[i].animal(time)
-    if (time === 190) menu.style.display = 'inline-block'
-    if (time < 400) {
-        window.requestAnimationFrame(random)
-        time++
-    }
-})()
     
-function backdrop(text) {
+const backdrop = (text) => {
     // 【文字面积，循环时用于判读y轴高度，粒子大小间隔， 文字宽度】
     let [imgdata, cyclic, size, textwith] = [{}, 1, 16, 0]
 
-    textcontext.font = "normal 900 " + fontsize +"px Avenir, Helvetica Neue, Helvetica, Arial, sans-serif"
+    textcontext.font = "normal 900 " + fontsize + "px Avenir, Helvetica Neue, Helvetica, Arial, sans-serif"
     textwith = Math.floor(textcontext.measureText(text).width)
     textcontext.fillStyle = '#ff0000'
-    textcontext.fillText(text, (docsize[0] - textwith) / 2, (docsize[1]) / 2)
+    textcontext.fillText(text, (docsize[0] - textwith) / 2, (docsize[1] + 200) / 2 )
     textwith = ~~ (textwith) * size + size
     
     // 获取文字所在区域，尽可能减小面积
-    imgdata = textcontext.getImageData(0,0, textwith, fontsize * 2)
+    imgdata = textcontext.getImageData(0,0, textwith, (docsize[1] + 200) / 2)
     textcontext.clearRect(0, 0, docsize[0], docsize[1])
 
     // 粒子圆心坐标，粒子数组
@@ -112,7 +102,7 @@ function backdrop(text) {
     pointarr.length - 1 - len > 0 ? pointarr.splice(len, pointarr.length - len) : ''
 }
 
-function watchown(state) {
+const watchown = (state) => {
     switch (state) {
         case 'watch':
             if (!document.getElementById("question")) {
@@ -156,7 +146,7 @@ function watchown(state) {
     }
 }
 
-function pagefont(page) {
+const pagefont = (page) =>  {
     if (!document.getElementById(page)) {
         get('component', {page: page}).then(res => {
             menu.style.marginTop = '8vh'
@@ -171,12 +161,10 @@ function pagefont(page) {
     }
 }
 
-function message() {
+const message = () => {
     if (!document.getElementById("message")) {
         axios.get('/categories/WEB/', {page: "message"}).then(res => {
             menu.style.marginTop = '8vh'
-            console.log(res);
-            
             pages.innerHTML = res.data
             setTimeout(() => document.getElementById("message").style.height = 'calc(80vh - 112px)', 200)
         }).catch(error => {
@@ -190,3 +178,14 @@ function message() {
     }
 }
 
+(function random() {
+    // 指定时间重新生成文字
+    if(time === 0) backdrop('Hello')
+    maincontent.clearRect(0, 0, docsize[0], docsize[1])
+    for (var i = 0; i < pointarr.length; i++) pointarr[i].animal(time)
+    if (time === 190) menu.style.display = 'inline-block'
+    if (time < 400) {
+        window.requestAnimationFrame(random)
+        time++
+    }
+})()

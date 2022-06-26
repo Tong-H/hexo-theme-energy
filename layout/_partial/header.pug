@@ -1,10 +1,9 @@
 block prepend cssFile
     link(rel="stylesheet" href="/css/partial/header.css")
 
-.header
+.header.scroll
     .maxwidth
         .nav
-            -console.log(path)
             each url, label in theme.menu
                 a#artlist(href=url_for("/"+url) class=(path.split('/')[0] === url ? 'focuspage' : ''))
                     i.iconfont(class=`icon${url}`)

@@ -18,6 +18,8 @@ html(lang=config.language)
         link(rel="stylesheet" href="/css/public.css")
         link(rel="stylesheet" href="/css/reset.css")
         link(rel="stylesheet" href="/css/iconfont.css")
+        script.
+            var _hmt = _hmt || [];(function(){var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?7b429839b56cf831028b7ac4cb9b5086";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})()
         title= pageTitle
         block cssFile
     body.scroll
@@ -32,5 +34,3 @@ html(lang=config.language)
             block body
         block js
         script(async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js")
-        script.
-            var _hmt = _hmt || [];(function(){var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?a4d08c5088ca0d4b18c14260c9ca89a1";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})()

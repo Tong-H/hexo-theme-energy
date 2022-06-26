@@ -28,10 +28,10 @@ block main
                                     //- p!= word_wrap(trim(strip_html(post.content)))
                                 .meta
                                     if min2read
-                                        i.iconfont.iconweibiaoti--(title="阅读时长")= min2read(post.content)
+                                        i.iconfont.iconshijian(title="阅读时长")= min2read(post.content)
                                     if wordcount
                                         i.iconfont.iconwenzi(title="字数")= wordcount(post.content)
-                                    i.iconfont.iconshijian(title="创建时间")= date(post.date, "YYYY-MM-DD HH:mm")
+                                    i.iconfont.iconshijian(title="创建时间")= date(post.date, "YYYY-MM-DD")
                         #paginator!= paginator()
                 script.
                     document.getElementById('arshow').onclick = function() {

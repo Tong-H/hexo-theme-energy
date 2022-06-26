@@ -1,7 +1,11 @@
 .footer {
     text-align: center;
-    margin: 30px 0;
+    margin: 10px 0;
+    font-size: 12px;
 }
 .footer a {
     border-bottom: 1px solid;
+}
+.footer .iconfont {
+    font-size: 12px;
 }

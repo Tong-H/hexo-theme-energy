@@ -14,19 +14,20 @@
 }
 .header .nav > a {
     padding: 0 10px;
+    line-height: 10px;
     word-break: keep-all;
-    transition: all 0.5s;
+    transition: all 0.4s;
     cursor: pointer;
 }
 .header .nav > a:hover{
     background: #fff;
-    padding: 19px 10px;
+    padding: 20px 10px;
     color: #fe7215;
 }
 .focuspage{
     background: #fff;
     color: #fe7215;
-    padding: 8px 10px !important;
+    padding: 20px 10px !important;
 }
 input:focus:invalid {
     background: #ffd1d1;

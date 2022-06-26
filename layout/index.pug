@@ -10,7 +10,13 @@ block body
             canvas#maincanvas
         #menu
             .linkitem
-                p= theme.home_title
+                svg(width="420" height="90")
+                    defs
+                        text(id="welcome")= theme.home_title
+                    use(href="#welcome" x="2" y="70" stroke="#fff" stroke-dasharray="35, 105")
+                    use(href="#welcome" x="2" y="70" stroke="#f11010" stroke-dasharray="0 35 35 70")
+                    use(href="#welcome" x="2" y="70" stroke="#b40b0b" stroke-dasharray="0 70 35 35")
+                    use(href="#welcome" x="2" y="70" stroke="#ff4c94" stroke-dasharray="0 105 35 0")
                 div
                     -for(i in theme.social)
                         a(href=theme.social[i].url title=theme.social[i].title)

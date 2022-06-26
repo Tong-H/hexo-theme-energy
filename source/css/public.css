@@ -1,170 +1,174 @@
-
-html, body {
-    margin: 0;
-    padding: 0;
-    color: #444;
-    font-weight: 100;
-    line-height: 30px;
+html,
+body {
+	margin: 0;
+	padding: 0;
+	color: #555;
+	line-height: 1.7;
+	font-family: -apple-system,system-ui,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial;
 }
 .ellipse {
-    position: relative;
-    overflow: hidden;
+	position: relative;
+	overflow: hidden;
 }
-.ellipse::after {
-    content: "...";
-    position: absolute;
-    bottom: 0;
-    font-size: 42px;
-    right: 0;
+.scroll {
+	overflow: auto;
 }
-.scroll{
-    overflow: auto;
+.scroll::-webkit-scrollbar {
+	/*滚动条整体样式*/
+	width: 1.5px; /*高宽分别对应横竖滚动条的尺寸*/
+	height: 1.5px;
 }
-.scroll::-webkit-scrollbar {/*滚动条整体样式*/
-    width: 1.5px;     /*高宽分别对应横竖滚动条的尺寸*/
-    height: 1.5px;
+.scroll::-webkit-scrollbar-thumb {
+	/*滚动条里面小方块*/
+	border-radius: 5px;
+	/* -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2); */
+	background: rgba(0, 0, 0, 0.1);
 }
-.scroll::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
-    border-radius: 5px;
-    /* -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2); */
-    background: rgba(0,0,0,0.1);
-}
-.scroll::-webkit-scrollbar-track {/*滚动条里面轨道*/
-    /* -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2); */
-    border-radius: 0;
-    background: rgba(0,0,0,0.1);
+.scroll::-webkit-scrollbar-track {
+	/*滚动条里面轨道*/
+	/* -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2); */
+	border-radius: 0;
+	background: rgba(0, 0, 0, 0.1);
 }
 #paginator {
-    text-align: center;
-    padding: 40px 0 20px 0;
-    font-weight: 600;
-    color: #ff7d46; 
+	text-align: center;
+	padding: 40px 0 20px 0;
+	font-weight: 600;
+	color: #ff7d46;
 }
-#paginator span {
-    margin: 10px;
-    border-bottom: 1px solid
+#paginator .current {
+	margin: 10px;
+	border-bottom: 1px solid;
 }
 #paginator a {
-    padding: 8px;
-    position: relative;
-    z-index: 1;
-    transition: all 0.4s
+	padding: 4px 8px;
+	position: relative;
+	z-index: 1;
+	transition: all 0.4s;
 }
 #paginator a:hover {
-    color: #fff;
-    background: #ff7d46;
-    border-radius: 4px;
+	color: #fff;
+	background: #ff7d46;
+	border-radius: 4px;
 }
 
 @keyframes page-hover {
-    0% {
-        transform: translate(0, 34px);
-        height: 0;
-    }
+	0% {
+		transform: translate(0, 34px);
+		height: 0;
+	}
 }
 .main {
-    min-height: 100vh;
-    width: 100vw;
-    animation: bounce-in 2s;
-    background: linear-gradient(-48deg,
-     #fffcf4 34%, #ff9537 34%, #ff9537 calc(34% + 30px), #fffcf4 calc(34% + 30px),
-     #fffcf4 40%, #ffdd7a 40%, #ffdd7a calc(40% + 15%), #fffcf4 calc(40% + 15%),
-     #fffcf4 60%, #ffa883 60%, #ffa883 calc(60% + 8%), #fffcf4 calc(60% + 8%));
-    transition: all 1s;
-    overflow-x: hidden;
+	min-height: 100vh;
+	width: 100vw;
+	animation: bounce-in 1.5s;
+	background: linear-gradient(
+		-48deg,
+		#fffcf4 34%,
+		#ff9537 34%,
+		#ff9537 calc(34% + 30px),
+		#fffcf4 calc(34% + 30px),
+		#fffcf4 40%,
+		#ffdd7a 40%,
+		#ffdd7a calc(40% + 15%),
+		#fffcf4 calc(40% + 15%),
+		#fffcf4 60%,
+		#ffa883 60%,
+		#ffa883 calc(60% + 8%),
+		#fffcf4 calc(60% + 8%)
+	);
+	transition: all .4s;
+	overflow-x: hidden;
 }
 .artititle {
-    font-size: 24px;
-    vertical-align: middle;
-    margin: 30px 10px;
-    font-weight: 900;
-    text-align: center
+	font-size: 18px;
+	vertical-align: middle;
+	font-weight: 900;
+	text-align: center;
 }
 @keyframes bounce-in {
-    0% {
-        transform: translate(50vw, 0);
-        opacity: 0;
-    }
-    50% {
-        transform: translate(25vw, 0);
-        opacity: 0;
-    }
-    100% {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
+	0% {
+		transform: translate(50vw, 0);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
 }
-@media (min-width: 600px ){
-    html, body {
-        font-size: 16px;
-    }
-    .maxwidth {
-        width: 100vw;
-        max-width: 1600px;
-        min-width: 1000px;
-        margin: auto;
-    }
-    .header {
-        position: fixed;
-        top: 0;
-        z-index: 1;
-    }
-    .header .maxwidth {
-        padding: 0 8vw;
-        width: 84vw;
-        min-width: calc(1000px - 16vw);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .header .search input {
-        width: 300px;
-    }
-    #sidebar {
-        margin-left: 30px;
-        height: calc(100vh - 166px);
-        position: fixed;
-        top: 78px;
-        z-index: 2;
-        overflow: auto;
-    }
-    .rightside {
-        padding: 30px;
-        display: inline-block;
-        background: #ffffffa3;
-        width: calc(100% - 410px);
-        margin: 76px 0 0 330px;
-    } 
-    #sidebar {
-        width: 240px;
-        display: inline-block;
-        vertical-align: top;
-        margin-right: 20px;    
-    }
-    body {
-        min-width: 1000px;
-    }
+@media (min-width: 600px) {
+	html,
+	body {
+		font-size: 14px;
+	}
+	.maxwidth {
+		width: 100vw;
+		max-width: 1300px;
+		min-width: 1000px;
+		margin: auto;
+	}
+	.header {
+		position: fixed;
+		top: 0;
+		z-index: 1;
+	}
+	.header .maxwidth {
+		padding: 0 8vw;
+		max-width: 84vw;
+		min-width: calc(1000px - 16vw);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.header .search input {
+		width: 300px;
+	}
+	#sidebar {
+		margin-left: 30px;
+        height: calc(100vh - 120px);
+		position: fixed;
+		top: 69px;
+		z-index: 2;
+		overflow: auto;
+		width: 250px;
+		box-sizing: border-box;
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 20px;
+	}
+	.rightside {
+		padding: 30px;
+		display: inline-block;
+		background: rgb(255 255 255 / 90%);
+		margin: 76px 30px 0 297px;
+		width: calc(100% - 327px);
+	}
+	body {
+		min-width: 1000px;
+	}
 }
 @media (max-width: 600px) {
-    html, body {
-        font-size: 14px;
-    }
-    body {
-        min-width: 350px;
-    }
-    .header .search input {
-        width: calc(100% - 62px);
-    }
-    .maxwidth, .rightside {
-        width: calc(100% - 32px);
-        padding: 0 16px;
-    }
-    .rightside {
-        background: #ffffffa3;
-    }
-    #sidebar {
-        width: calc(100% - 72px);
-        display: inline-block;
-        margin: 0 16px;
-    }
+	html,
+	body {
+		font-size: 14px;
+	}
+	body {
+		min-width: 350px;
+	}
+	.header .search input {
+		width: calc(100% - 62px);
+	}
+	.maxwidth,
+	.rightside {
+		width: calc(100% - 32px);
+		padding: 0 16px;
+	}
+	.rightside {
+		background: #ffffffa3;
+	}
+	#sidebar {
+		width: calc(100% - 72px);
+		display: inline-block;
+		margin: 0 16px;
+	}
 }
