@@ -12,7 +12,6 @@ block prepend cssFile
     if is_post()
         if toc(page.content)
             .structure.category-list
-                p 目录
                 !=toc(page.content)
         if page.relation
             .relat.category-list

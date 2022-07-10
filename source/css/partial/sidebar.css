@@ -79,7 +79,7 @@
 #sidebar .category-list-item span::before {
     content: '(';
 }
-#sidebar.tags a:hover::after, #sidebar .relat li:hover::after, #sidebar .category-list li:hover::after {
+#sidebar.tags a:hover::after, #sidebar .relat li:hover::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -109,13 +109,12 @@
     color: #ffac00
 }
 .structure .toc {
-    margin-left: 10px;
     font-size: 12px;
 }
 .structure .toc .toc-item {
     position: relative;
+    margin-left: 10px;
 }
-.structure .toc .toc-number {
-    color: #ffac00;
-    font-weight: 900;
+.structure .toc > li {
+    margin: 0 !important;
 }

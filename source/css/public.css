@@ -10,9 +10,7 @@ body {
 	position: relative;
 	overflow: hidden;
 }
-.scroll {
-	overflow: auto;
-}
+
 .scroll::-webkit-scrollbar {
 	/*滚动条整体样式*/
 	width: 1.5px; /*高宽分别对应横竖滚动条的尺寸*/
@@ -39,6 +37,7 @@ body {
 #paginator .current {
 	margin: 10px;
 	border-bottom: 1px solid;
+	cursor: default;
 }
 #paginator a {
 	padding: 4px 8px;
@@ -110,7 +109,7 @@ body {
 	.header {
 		position: fixed;
 		top: 0;
-		z-index: 1;
+		z-index: 4;
 	}
 	.header .maxwidth {
 		padding: 0 8vw;

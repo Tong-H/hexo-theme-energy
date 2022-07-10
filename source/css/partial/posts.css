@@ -18,8 +18,8 @@
     content: '';
     position: absolute;
     width: 100%;
-    top: 7px;
-    height: 35px;
+    top: 0;
+    height: 100%;
     transform: translate(0,0);
     background: #fff0e3;
     left: 0;
