@@ -46,6 +46,7 @@
     height: 40px;
     line-height: 40px;
     text-align: center;
+    transition: all 1s;
 }
 #sidebar .social a:hover {
     background: #ffb51c;

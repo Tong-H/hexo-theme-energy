@@ -58,6 +58,6 @@ Gitalk:
     owner: Tong-H 
     repo: Tong-H.github.io # repo of issue
     admin: Tong-H # you and your partner, split by the comma
-    client_id: 5658f62c9837c979f96f # Client ID
-    client_secret: 36813d127f4f0918cd30231a403e09d81015e014 # Client secret
+    client_id: id # Client ID
+    client_secret: secret # Client secret
     distractionFreeMode: false

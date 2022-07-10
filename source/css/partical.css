@@ -35,6 +35,9 @@
 	display: inline-block;
 	animation: userin 2s;
 }
+.linkitem svg {
+	cursor: default;
+}
 .linkitem p {
 	font-size: 30px;
 	text-align: center;
@@ -55,7 +58,7 @@
 	transition: all 0.8s;
 }
 .linkitem a:hover {
-	transform: scale(1.4);
+	transform: scale(1.2);
 }
 .linkitem a i {
 	font-size: 26px;
@@ -82,10 +85,12 @@
 	}
 }
 @media (max-width: 420px) {
-	.linkitem {
-		transform: scale(0.8);
-		position: relative;
-		left: -3%;
+	.linkitem svg {
+		width: 320px;
+	}
+	.linkitem svg use {
+		font-size: 60px;
+		stroke-width: 3
 	}
 }
 @media (max-width: 1200px) {
@@ -106,7 +111,7 @@ svg use {
 	font-family: sans-serif;
 	font-weight: bold;
 	font-size: 80px;
-	stroke-width: 3;
+	stroke-width: 4;
 	fill: none;
 	stroke-linecap: square;
     animation: Welcome 2s linear infinite;
