@@ -3,12 +3,11 @@ language: en
 
 # main menu navigation
 menu:
-    # Home: /
     Archives: archives
     Link: link
     About: about
     404: 404
-    # Message: message
+    # Static: Static
 
 # display in the home page 
 home_title: WELCOME
@@ -16,6 +15,11 @@ home_title: WELCOME
 header_right: TONG-H
 # display after the article when copyRight of the page is true 
 article_txt: 转载请注明来源，欢迎指出任何有错误或不够清晰的表达
+
+# whether to display copyright number
+Copyright:
+    date: Copyright © 2017 - 2023
+    number: 蜀ICP备19024124号
 
 social:
     Home:

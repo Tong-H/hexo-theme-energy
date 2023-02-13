@@ -3,8 +3,8 @@ block prepend cssFile
 
 .footer
     p
-        span= `Copyright © 2017 - ${new Date().getFullYear()}  `
-        a(href="http://www.beian.miit.gov.cn/") 蜀ICP备19024124号
+        span= `${theme.Copyright.date}`
+        a(href="http://www.beian.miit.gov.cn/")=`${theme.Copyright.number}`
     p
         i.iconfont.iconchakan
             span 本站总访问量
