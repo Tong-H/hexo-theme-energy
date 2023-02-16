@@ -4,7 +4,7 @@ body {
 	padding: 0;
 	color: #555;
 	line-height: 1.7;
-	font-family: -apple-system,system-ui,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial;
+	font-family: -apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial;
 }
 .ellipse {
 	position: relative;
@@ -76,11 +76,11 @@ body {
 		#ffa883 calc(60% + 8%),
 		#fffcf4 calc(60% + 8%)
 	);
-	transition: all .4s;
+	transition: all 0.4s;
 	overflow-x: hidden;
 }
 .artititle {
-	font-size: 20px;
+	font-size: 18px;
 	vertical-align: middle;
 	font-weight: 900;
 	text-align: center;
@@ -103,7 +103,6 @@ body {
 	.maxwidth {
 		width: 100vw;
 		max-width: 1300px;
-		min-width: 1000px;
 		margin: auto;
 	}
 	.header {
@@ -112,9 +111,8 @@ body {
 		z-index: 4;
 	}
 	.header .maxwidth {
-		padding: 0 8vw;
-		max-width: 84vw;
-		min-width: calc(1000px - 16vw);
+		padding: 0 6vw;
+		max-width: 88vw;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -124,7 +122,7 @@ body {
 	}
 	#sidebar {
 		margin-left: 30px;
-        height: calc(100vh - 120px);
+		height: calc(100vh - 120px);
 		position: fixed;
 		top: 69px;
 		z-index: 2;
@@ -137,13 +135,8 @@ body {
 	}
 	.rightside {
 		padding: 30px;
-		display: inline-block;
 		background: rgb(255 255 255 / 90%);
-		margin: 76px 30px 0 297px;
-		width: calc(100% - 327px);
-	}
-	body {
-		min-width: 1000px;
+		margin: 76px 20px 0 297px;
 	}
 }
 @media (max-width: 600px) {
@@ -157,17 +150,27 @@ body {
 	.header .search input {
 		width: calc(100% - 62px);
 	}
-	.maxwidth,
-	.rightside {
-		width: calc(100% - 32px);
+	.maxwidth {
 		padding: 0 16px;
 	}
 	.rightside {
 		background: #ffffffa3;
+		padding: 16px;
 	}
 	#sidebar {
-		width: calc(100% - 72px);
 		display: inline-block;
-		margin: 0 16px;
+		margin-bottom: 40px;
+		animation: none !important;
+	}
+	.header .nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.header .search {
+		display: none;
+	}
+	.header .focuspage {
+		border-radius: 4px;
 	}
 }

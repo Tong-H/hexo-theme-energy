@@ -14,12 +14,13 @@ block main
             if is_archive() && !is_year()
                 #list_archives(style='opacity: 0;display:  none')
                     #arshow.switch
-                        i.iconfont.iconArchives
+                        i.iconfont.iconarchives
                     != list_archives({})
                 if page.posts.length > 0
                     #normalposts
                         #poshow.switch
                             i.iconfont.iconshijian
+                            span Timeline
                         each post in page.posts.sort('date', -1).limit(10).toArray()
                             article
                                 a.artititle(href=url_for(post.path))= post.title

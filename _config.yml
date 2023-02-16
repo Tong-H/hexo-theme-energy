@@ -7,7 +7,6 @@ menu:
     Link: link
     About: about
     404: 404
-    # Static: Static
 
 # display in the home page 
 home_title: WELCOME
