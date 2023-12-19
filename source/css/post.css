@@ -215,3 +215,11 @@ code {
 .line .attr {
 	color: #66b3d2;
 }
+.copyright {
+	padding: 6px 20px;
+	color: #ff9537;
+	border-radius: 4px;
+	background: white;
+	font-weight: 600;
+	margin: 20px 0;
+}

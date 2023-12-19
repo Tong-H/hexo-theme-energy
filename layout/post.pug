@@ -28,6 +28,8 @@ block main
                 include _partial/copyright.pug
             if (theme.Gitalk.client_id && theme.Gitalk.client_secret && theme.Gitalk.enable)
                 include _partial/comment.pug
+            if (theme.Valine.enable && theme.Valine.appId && theme.Valine.appKey)
+                include _partial/valine.pug
         include _partial/footer.pug
 //- block js
 //-     script(src="/js/hexo.js")

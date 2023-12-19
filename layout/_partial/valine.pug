@@ -1,0 +1,16 @@
+#comment
+    #vcomments-container(data-valine=JSON.stringify(theme.Valine))
+    script(id="Valine-script")
+    script.
+        (() => {
+            const el = document.getElementById("Valine-script")
+            const config = JSON.parse(document.getElementById('vcomments-container').dataset.valine)
+            console.log(this)
+            el.src=config.cdn
+            el.onload = () => {
+                new Valine({
+                    el: '#vcomments-container',
+                    ...config
+                })
+            }
+        })()

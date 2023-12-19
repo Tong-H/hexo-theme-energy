@@ -64,3 +64,9 @@ Gitalk:
     client_id: id # Client ID
     client_secret: secret # Client secret
     distractionFreeMode: false
+
+Valine: # All the configuration items will be passed to the new Valine function
+    enable: false
+    cdn: //unpkg.com/valine/dist/Valine.min.js
+    appId: appId
+    appKey: appKey
