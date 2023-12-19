@@ -1,6 +1,7 @@
 # hexo-theme-energy
 
 there is theme of hexo, preview [https://tong-h.github.io/](https://tong-h.github.io/)
+Available plugins: busuanzi、Gitalk、Valine
 
 ## install
 
