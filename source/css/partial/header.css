@@ -2,7 +2,16 @@
     background: #ffac00;
     text-align: right;
     box-shadow: 0px 0px 0px 8px #fff, 0px 0px 0px 16px #ffac00; 
-    overflow: auto;
+    width: 100%;
+    margin-bottom: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 6;
+}
+.header .maxwidth {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .header img {
     width: 50px;
@@ -10,24 +19,25 @@
     margin-right: 20px;
 }
 .header .nav {
-    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    height: 59px;
 }
 .header .nav > a {
-    padding: 0 10px;
-    line-height: 10px;
     word-break: keep-all;
     transition: all 0.4s;
     cursor: pointer;
+    padding: 0 1vw;
 }
 .header .nav > a:hover{
     background: #fff;
-    padding: 20px 10px;
+    padding: 16px 1vw;
     color: #fe7215;
 }
 .focuspage{
     background: #fff;
     color: #fe7215;
-    padding: 20px 10px !important;
+    padding: 16px 1vw !important;
 }
 input:focus:invalid {
     background: #ffd1d1;

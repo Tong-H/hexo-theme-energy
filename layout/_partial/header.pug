@@ -1,11 +1,11 @@
 block prepend cssFile
     link(rel="stylesheet" href="/css/partial/header.css")
 
-.header.scroll
+.header
     .maxwidth
         .nav
             each url, label in theme.menu
                 a#artlist(href=url_for("/"+url) class=(path.split('/')[0] === url ? 'focuspage' : ''))
                     i.iconfont(class=`icon${url}`)
                     span.headhid &nbsp;#{label}
-        .search= theme.header_right
+        a.search(href="/")= theme.header_right

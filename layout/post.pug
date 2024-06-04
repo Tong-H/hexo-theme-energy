@@ -7,7 +7,7 @@ block main
     .maxwidth
         include _partial/sidebar.pug
         .post.rightside
-            .artititle= page.title
+            h1.artititle= page.title
             .info
                 if wordcount
                     i.iconfont.iconwenzi(title="字数")= wordcount(page.content)
@@ -30,6 +30,6 @@ block main
                 include _partial/comment.pug
             if (theme.Valine.enable && theme.Valine.appId && theme.Valine.appKey)
                 include _partial/valine.pug
-        include _partial/footer.pug
+            include _partial/footer.pug
 //- block js
 //-     script(src="/js/hexo.js")

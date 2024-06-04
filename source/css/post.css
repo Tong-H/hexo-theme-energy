@@ -22,16 +22,12 @@
 }
 .postDetail {
 	word-break: break-word;
-	line-height: 1.75;
-	font-weight: 400;
 	overflow-x: hidden;
 }
 .postDetail h3,
 .postDetail h4,
 .postDetail h5 {
-	border-left: 4px solid;
 	margin: 30px 0;
-	padding: 0px 6px;
 }
 .postDetail h1,
 .postDetail h2 {
@@ -100,9 +96,10 @@ code {
 }
 .postDetail code {
 	padding: 0px 2px;
-	word-wrap: break-word;
-	background: rgb(255 248 229);
-	border-radius: 3px;
+    font-size: 90%;
+    white-space: break-spaces;
+    background-color: rgba(175, 184, 193, 0.2);
+    border-radius: 6px;
 }
 .postDetail pre {
 	padding: 10px;
@@ -128,6 +125,19 @@ code {
 }
 .highlight {
 	border-radius: 1px;
+	font-size: 90%;
+}
+.highlight::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+.highlight::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background: #eee;
+}
+.highlight::-webkit-scrollbar-track {
+	border-radius: 0;
+	background: #383838
 }
 .highlight pre {
 	border: none;

@@ -1,18 +1,17 @@
 #sidebar {
     background:  #ffe4ad;
-    padding: 16px;
+    padding: 14px;
     transition: all 1s;
     box-shadow: #ffac00 0 0 0 8px, #ffac008f 0 0 0 16px;
-    animation: sidebarC 1.8s;
+    animation: sidebarC 4s;
 }
 @keyframes sidebarC {
     0% {
-        height: 0;
+        height: 0px;
         opacity: 0;
     }
-    40% {
-        height: 0;
-        opacity: 0;
+    10% {
+        opacity: 1;
     }
     100% {
         opacity: 1;
@@ -109,12 +108,12 @@
     color: #ffac00
 }
 .structure .toc {
-    font-size: 12px;
+    font-size: 90%;
 }
 .structure .toc .toc-item {
     position: relative;
-    margin-left: 10px;
+    margin: 4px 0 4px 8px ;
 }
 .structure .toc > li {
-    margin: 0 !important;
+    margin-left: 4px !important;
 }

@@ -12,8 +12,7 @@ textcanvas.width = docsize[0]
 textcanvas.height = docsize[1]
 
 const color = ['#ffffff', '#b40b0b', '#ff4c94', '#f11010'],
-    menu = document.getElementById("menu"),
-    pages = document.getElementById('pages')
+    menu = document.getElementById("menu")
 
 // 【粒子数组，动画时间， 聚拢速度，粒子活动速度，文字高度】
 let [pointarr, time, joinspeed, pointspeed, fontsize] = [[], 0, 80, 4, 400]
@@ -102,88 +101,12 @@ const backdrop = (text) => {
     pointarr.length - 1 - len > 0 ? pointarr.splice(len, pointarr.length - len) : ''
 }
 
-const watchown = (state) => {
-    switch (state) {
-        case 'watch':
-            if (!document.getElementById("question")) {
-                menu.style.marginTop = '8vh'
-                get('component', {page: 'question'}).then(res => {
-                    pages.innerHTML = res.data
-                    let  question = document.getElementById("question").style
-                    let  inputone = document.getElementById("inputone")
-                    let  inputtwo = document.getElementById("inputtwo")
-                    if (question.width === '') {
-                        inputone.style.transform = ''
-                        inputtwo.style.left = '320px'
-                    }
-                    setTimeout(() => {
-                        question.width = '320px'
-                    }, 200)
-                })
-            } else {
-                menu.style.marginTop = '30vh'
-                let  question = document.getElementById("question")
-                question.style.width = '0'
-                setTimeout(() => {
-                    pages.innerHTML = ''
-                }, 1000)
-            }
-            break;
-        case 'next':
-            inputone.style.transform = 'translate(-320px)'
-            inputtwo.style.left = '0'
-        break;
-        case 'submit':
-            if (inputone.firstChild.value && inputtwo.firstChild.value) {
-                post('api/person', {question: inputone.firstChild.value + ',' + inputtwo.firstChild.value}).then(response => {
-                    window.location.href = response
-                }).catch(error => {
-                    console.log(error)
-                })
-            }
-        default:
-            break;
-    }
-}
-
-const pagefont = (page) =>  {
-    if (!document.getElementById(page)) {
-        get('component', {page: page}).then(res => {
-            menu.style.marginTop = '8vh'
-            pages.innerHTML = res.data
-            setTimeout(() => document.getElementById(page).style.height = 'calc(80vh - 112px)', 200)
-        })
-    } else {
-        menu.style.marginTop = '30vh'
-        let  about = document.getElementById(page)
-        about.style.height = '0'
-        setTimeout(() => pages.innerHTML = '', 1000)
-    }
-}
-
-const message = () => {
-    if (!document.getElementById("message")) {
-        axios.get('/categories/WEB/', {page: "message"}).then(res => {
-            menu.style.marginTop = '8vh'
-            pages.innerHTML = res.data
-            setTimeout(() => document.getElementById("message").style.height = 'calc(80vh - 112px)', 200)
-        }).catch(error => {
-
-        })
-    } else {
-        menu.style.marginTop = '30vh'
-        let  about = document.getElementById("message")
-        about.style.height = '0'
-        setTimeout(() => pages.innerHTML = '', 1000)
-    }
-}
-
 (function random() {
     // 指定时间重新生成文字
     if(time === 0) backdrop('Hello')
     maincontent.clearRect(0, 0, docsize[0], docsize[1])
     for (var i = 0; i < pointarr.length; i++) pointarr[i].animal(time)
-    if (time === 190) menu.style.display = 'inline-block'
+    if (time === 200) menu.style.display = 'flex'
     if (time < 400) {
         window.requestAnimationFrame(random)
         time++
