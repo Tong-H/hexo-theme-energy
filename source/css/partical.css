@@ -6,7 +6,6 @@
 	position: absolute;
 }
 .preAnimat {
-	display: none;
 	position: absolute;
 	transition: all 1s;
 	width: 100%;
